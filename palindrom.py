@@ -11,6 +11,14 @@ def palindrom(string_to_check):
         False if string_to_check is not a palindrom
     """
     string_to_check = string_to_check.lower().replace(" ", "") 
+
+    # is_only_letters = string_to_check.isalpha() -- pomocniczo do sprawdzenia czy wszystkie znaki są literami
+    # print(is_only_letters)
+
+    string_to_check = ''.join(character for character in string_to_check if character.isalnum())
+
+    #  print(string_to_check) -- omocniczo: sprawdzenie czy string_to_check jest dobrze nadpisana
+
     N= len(string_to_check) 
     for i in range(math.floor(N/2)):
         if string_to_check[i] != string_to_check[N-1-i]:
